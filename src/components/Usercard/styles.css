@@ -1,0 +1,14 @@
+.user-card {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+    box-shadow: 0 0 10px rgb(168, 166, 166);
+
+}
+
+.user-card span {
+    font-size: 20px;
+    font-weight: 500;
+}

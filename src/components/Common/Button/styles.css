@@ -1,0 +1,17 @@
+.btn {
+    color: white;
+    background-color: rgba(248, 82, 82, 0.966);
+    border-radius: .7rem;
+    padding: .3rem;
+    width: 6rem;
+    height: 2.5rem;
+}
+
+.btn button {
+    color: inherit;
+    background-color: inherit;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+}
