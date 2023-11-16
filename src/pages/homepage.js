@@ -35,7 +35,11 @@ function HomePage() {
                 <div className='not-following'>
                     <span>Nothing to show</span>
                 </div>
-                : (<div className='homepage-container' style={{ margin: "50px" }}>
+                : (<div className='homepage-container' style={{
+                    margin: "50px", display: "flex;"
+                    , flexDirection: "column;",
+                    gap: "1rem;"
+                }}>
                     {blogList.map((blog, key) => <BlogItem blogId={blog._id} isMyBlogs={false} />)}
 
                 </div>)}
