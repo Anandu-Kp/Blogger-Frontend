@@ -11,7 +11,7 @@ function Users() {
     }, [isFollowing]);
 
     const fetchUsers = async () => {
-        axios.get(`http://${process.env.REACT_APP_BASE_URL}/user/get-users`, {
+        axios.get(`${process.env.REACT_APP_BASE_URL}/user/get-users`, {
             headers: {
                 "blog-token": localStorage.getItem("token")
             }
