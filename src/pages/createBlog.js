@@ -21,7 +21,7 @@ function CreateBlog() {
         setTitle("");
         setTextData("");
 
-        axios.post(`http://localhost:3001/blog/create`, blogObj, {
+        axios.post(`${process.env.REACT_APP_BASE_URL}/blog/create`, blogObj, {
             headers: {
                 "blog-token": localStorage.getItem("token")
             }

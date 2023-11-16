@@ -8,7 +8,7 @@ function UserCard({ user, isFollowing, setIsFollowing }) {
 
     const handleFollow = (event) => {
         event.stopPropagation()
-        axios.post(`http://localhost:3001/follow/follow-user`, {
+        axios.post(`${process.env.REACT_APP_BASE_URL}/follow/follow-user`, {
             followingUserId: user.userId
         },
             {
@@ -24,7 +24,7 @@ function UserCard({ user, isFollowing, setIsFollowing }) {
     }
     const handleUnFollow = (event) => {
         event.stopPropagation()
-        axios.post(`http://localhost:3001/follow//unfollow-user`, {
+        axios.post(`${process.env.REACT_APP_BASE_URL}/follow//unfollow-user`, {
             followingUserId: user.userId
         },
             {

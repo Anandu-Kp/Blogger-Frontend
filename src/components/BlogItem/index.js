@@ -16,7 +16,7 @@ function BlogItem({ blogId, isMyBlogs, blogs, setBlogs }) {
     }, [])
 
     const fetchData = () => {
-        axios.get(`http://localhost:3001/blog/get-blog/${blogId}`, {
+        axios.get(`${process.env.REACT_APP_BASE_URL}/blog/get-blog/${blogId}`, {
             headers: {
                 "blog-token": localStorage.getItem("token")
             }
@@ -34,7 +34,7 @@ function BlogItem({ blogId, isMyBlogs, blogs, setBlogs }) {
         let upDatedList = blogs.filter((blog) => {
             return blog._id != id
         })
-        axios.delete(`http://localhost:3001/blog/delete/${id}`, {
+        axios.delete(`${process.env.REACT_APP_BASE_URL}/blog/delete/${id}`, {
             headers: {
                 "blog-token": localStorage.getItem("token")
             }
@@ -59,7 +59,7 @@ function BlogItem({ blogId, isMyBlogs, blogs, setBlogs }) {
         }
 
 
-        axios.put(`http://localhost:3001/blog/update`, newBlogObj, {
+        axios.put(`${process.env.REACT_APP_BASE_URL}/blog/update`, newBlogObj, {
             headers: {
                 "blog-token": localStorage.getItem("token")
             }

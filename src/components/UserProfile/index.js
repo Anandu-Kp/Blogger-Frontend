@@ -9,7 +9,7 @@ function UserProfile({ userObj, isOtherProfile, isFollowing, setIsFollowing }) {
 
 
     const handleFollow = () => {
-        axios.post(`http://localhost:3001/follow/follow-user`, {
+        axios.post(`${process.env.REACT_APP_BASE_URL}/follow/follow-user`, {
             followingUserId: userObj.userId
         },
             {
@@ -24,7 +24,7 @@ function UserProfile({ userObj, isOtherProfile, isFollowing, setIsFollowing }) {
             .catch((err) => err.response.data.message ? alert(err.response.data.message) : alert(err))
     }
     const handleUnFollow = () => {
-        axios.post(`http://localhost:3001/follow//unfollow-user`, {
+        axios.post(`${process.env.REACT_APP_BASE_URL}/follow//unfollow-user`, {
             followingUserId: userObj.userId
         },
             {

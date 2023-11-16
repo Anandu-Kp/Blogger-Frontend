@@ -21,7 +21,7 @@ function UserPage() {
     }, [])
 
     const fetchData = () => {
-        axios.post(`http://localhost:3001/follow/is-following`,
+        axios.post(`${process.env.REACT_APP_BASE_URL}/follow/is-following`,
             {
                 followingUserId: userId
             }
@@ -33,7 +33,7 @@ function UserPage() {
                 setIsFollowing(res.data.data);
             }).catch((err) => alert(err.message))
         // console.log(localStorage.getItem("token"));
-        axios.post(`http://localhost:3001/user/get-user`,
+        axios.post(`${process.env.REACT_APP_BASE_URL}/user/get-user`,
             {
                 userId: userId
             }

@@ -19,7 +19,7 @@ function Login() {
         }
         setUsername("");
         setPassword("");
-        axios.post(`http://localhost:3001/user/login`, userObj).then((response) => {
+        axios.post(`${process.env.REACT_APP_BASE_URL}/user/login`, userObj).then((response) => {
 
             if (response.status == 201) {
                 localStorage.setItem("token", response.data.data.token)

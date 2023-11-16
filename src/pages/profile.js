@@ -18,7 +18,7 @@ function Profile() {
     }, [])
 
     const fetchData = () => {
-        axios.post(`http://localhost:3001/user/get-user`, {}, {
+        axios.post(`${process.env.REACT_APP_BASE_URL}/user/get-user`, {}, {
             headers: {
                 "blog-token": localStorage.getItem("token")
             }

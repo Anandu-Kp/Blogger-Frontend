@@ -16,7 +16,7 @@ function HomePage() {
     }, [])
 
     const fetchData = () => {
-        axios.get(`http://localhost:3001/blog//get-home-page-blogs`, {
+        axios.get(`${process.env.REACT_APP_BASE_URL}/blog//get-home-page-blogs`, {
             headers: {
                 "blog-token": localStorage.getItem("token")
             }

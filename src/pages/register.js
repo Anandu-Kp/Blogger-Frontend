@@ -22,7 +22,7 @@ function Register() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:3001/user/register`, formData)
+        axios.post(`${process.env.REACT_APP_BASE_URL}/user/register`, formData)
             .then((res) => {
                 setFormData({
                     name: '',

@@ -17,7 +17,7 @@ function Blog() {
     }, []);
 
     const fetchData = () => {
-        axios.get(`http://localhost:3001/blog/get-blog/${blogId}`, {
+        axios.get(`${process.env.REACT_APP_BASE_URL}/blog/get-blog/${blogId}`, {
             headers: {
                 "blog-token": localStorage.getItem("token")
             }
