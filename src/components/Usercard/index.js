@@ -6,7 +6,8 @@ import axios from 'axios'
 function UserCard({ user, isFollowing, setIsFollowing }) {
     let value = isFollowing ? "unfollow" : "follow";
 
-    const handleFollow = () => {
+    const handleFollow = (event) => {
+        event.stopPropagation()
         axios.post(`http://localhost:3001/follow/follow-user`, {
             followingUserId: user.userId
         },
@@ -21,7 +22,8 @@ function UserCard({ user, isFollowing, setIsFollowing }) {
             })
             .catch((err) => err.response.data.message ? alert(err.response.data.message) : alert(err))
     }
-    const handleUnFollow = () => {
+    const handleUnFollow = (event) => {
+        event.stopPropagation()
         axios.post(`http://localhost:3001/follow//unfollow-user`, {
             followingUserId: user.userId
         },

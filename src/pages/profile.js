@@ -30,7 +30,7 @@ function Profile() {
     return (<>
         <Navbar />
         <div className="profile">
-            {userObj.blogs && <UserProfile userObj={userObj} />}
+            {userObj.blogs && <UserProfile userObj={userObj} isOtherProfile={false} />}
         </div></>
     )
 }

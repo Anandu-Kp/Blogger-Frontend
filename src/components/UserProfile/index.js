@@ -44,7 +44,7 @@ function UserProfile({ userObj, isOtherProfile, isFollowing, setIsFollowing }) {
             <div className="profile-header">
                 <div>
                     <h2>{userObj.username}</h2>
-                    {!isFollowing ? <Button value={"follow"} onClick={handleFollow} /> : <Button value={"unfollow"} onClick={handleUnFollow} color={"rgba(248, 82, 82, 0.966)"} />}
+                    {isOtherProfile && <>{!isFollowing ? <Button value={"follow"} onClick={handleFollow} /> : <Button value={"unfollow"} onClick={handleUnFollow} color={"rgba(248, 82, 82, 0.966)"} />}</>}
 
                 </div>
                 <span>{blogs.length} Blogs</span>

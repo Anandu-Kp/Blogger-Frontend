@@ -30,11 +30,11 @@ function Register() {
                     email: '',
                     password: '',
                 })
-                localStorage.setItem("token", res.data.data.token)
+                // localStorage.setItem("token", res.data.data.token)
                 window.location.href = "/"
 
             })
-            .catch((err) => alert(err.message))
+            .catch((err) => err.response ? alert(err.response.data.message) : alert(err.message))
         // console.log(formData);
     };
 
